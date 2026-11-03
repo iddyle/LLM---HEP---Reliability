@@ -13,9 +13,7 @@ from agent import (
 )
 
 
-# --------------------------------------------------
-# 1. DOSYA AYARLARI
-# --------------------------------------------------
+# DOSYA AYARLARI
 
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "sonuclar"
@@ -24,9 +22,8 @@ OUTPUT_JSON = OUTPUT_DIR / "deney_c1_self_reflection.json"
 OUTPUT_TXT = OUTPUT_DIR / "deney_c1_self_reflection.txt"
 
 
-# --------------------------------------------------
-# 2. SELF-REFLECTION AŞAMASI
-# --------------------------------------------------
+
+# SELF-REFLECTION 
 
 def self_reflect(analysis_results, initial_report):
 
@@ -122,9 +119,7 @@ Return only valid JSON.
     return response["message"]["content"]
 
 
-# --------------------------------------------------
-# 3. SONUÇLARI KAYDET
-# --------------------------------------------------
+# SONUÇLARI KAYDET
 
 def save_results(
     analysis_results,
@@ -197,9 +192,9 @@ def save_results(
     print(OUTPUT_TXT)
 
 
-# --------------------------------------------------
-# 4. ANA PROGRAM
-# --------------------------------------------------
+
+# ANA PROGRAM
+
 
 def main():
 
