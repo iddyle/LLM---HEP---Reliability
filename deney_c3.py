@@ -8,9 +8,9 @@ import ollama
 from agent import MODEL, run_analysis_tool, ask_model, parse_report
 
 
-# ============================================================
+
 # C3 - CONSTRAINT VALIDATION
-# ============================================================
+
 
 OUTPUT_DIR = "sonuclar"
 OUTPUT_JSON = os.path.join(
@@ -23,9 +23,9 @@ OUTPUT_TXT = os.path.join(
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
-# ------------------------------------------------------------
-# JSON yardımcıları
-# ------------------------------------------------------------
+
+# JSON 
+
 
 def extract_json(text):
     """Model cevabından JSON nesnesini ayıklar."""
@@ -92,9 +92,8 @@ def normalize_report(response):
     return parsed
 
 
-# ------------------------------------------------------------
+
 # Constraint prompt
-# ------------------------------------------------------------
 
 def build_constraint_prompt(results, initial_report):
 
@@ -187,9 +186,10 @@ Use exactly this structure:
 """
 
 
-# ------------------------------------------------------------
+
 # Constraint validation
-# ------------------------------------------------------------
+
+
 
 def validate_constraints(report, results):
 
@@ -291,9 +291,9 @@ def validate_constraints(report, results):
     }
 
 
-# ------------------------------------------------------------
-# Constraint correction
-# ------------------------------------------------------------
+
+#Constraint correction
+
 
 def correct_report(results, initial_report):
 
@@ -316,9 +316,9 @@ def correct_report(results, initial_report):
     return extract_json(response["message"]["content"])
 
 
-# ------------------------------------------------------------
-# Ana deney
-# ------------------------------------------------------------
+
+#Ana deney
+
 
 def main():
 
